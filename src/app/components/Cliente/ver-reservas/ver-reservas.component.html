@@ -1,0 +1,52 @@
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded" style="width: 100%">
+                    <div class="form-group">
+                        <p class="address mb-5">
+                            <em>
+                                <strong>Ingrese su Cedula:</strong>
+                            </em>
+                            <input type="text" ID="TextBox1" runat="server">
+                            <input type="button" ID="btnBuscarReservacion" runat="server" value="Buscar Reservaciones"
+                                class="btn-primary">
+                        </p>
+                    </div>
+                    <p class="mb-3"></p>
+                    <div class="box-header">
+                        <h3 class="box-title"><strong>Reservaciones</strong></h3>
+                    </div>
+                    <div class="box-body table-responsive">
+                        <table datatable>
+                            <thead>
+                                <tr>
+                                    <th>Codigo Unico de Reservacion</th>
+                                    <th>Codigo Unico de Cliente</th>
+                                    <!-- <th>Cedula</th> -->
+                                    <th>Nombre</th>
+                                    <!-- <th>Apellido</th> -->
+                                    <!-- <th>Telefono</th> -->
+                                    <th>Numero de Personas</th>
+                                    <th>Numero de Mesa</th>
+                                    <th>Fecha y Hora</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbl_body_table2">
+                                <tr *ngFor="let item of listReservas">
+                                    <td>{{ item.id_reservacion }}</td>
+                                    <td>{{ item.id_cliente }}</td>
+                                    <td>{{ item.nombre_cliente }}</td>
+                                    <td>{{ item.cantidad_personas }}</td>
+                                    <td>{{ item.id_mesa }}</td>
+                                    <td>{{ item.fecha_hora_resevacion }}</td>
+                                </tr>
+                                <!--DATA POR MEDIO DE AJAX -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

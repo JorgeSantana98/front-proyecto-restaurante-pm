@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+  <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Principal</title>
+
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="master-recepcionista.component.css" />
+    <!-- Boxiocns CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar" [ngClass]="{ close: isSidebarClosed }">
+      <div class="logo-details">
+        <img src="/assets/img/restau46.png" />
+        <span class="logo_name">Restaurante Gourmet</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/recepcionistamesas">
+            <i class="bx bx-rectangle"></i>
+            <span class="link_name">Mesas</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" routerLink="/recepcionistamesas">Mesas</a></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/recepcionistareservaciones">
+            <i class="bx bx-phone-call"></i>
+            <span class="link_name">Reservaciones</span>
+          </a>
+
+          <ul class="sub-menu blank">
+            <li><a class="link_name" routerLink="/recepcionistareservaciones">Reservaciones</a></li>
+          </ul>
+        </li>
+        <li>
+          <div class="profile-details">
+            <div class="profile-content">
+              <img src="\assets\img\avatar2.png" alt="profileImg" />
+            </div>
+            <div class="name-job">
+              <div class="profile_name">Conectado</div>
+              <div class="job">Recepcionista</div>
+            </div>
+            <a href="Inicio.aspx">
+              <i class="bx bx-log-out"></i>
+              <span class="link_name"></span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="home-content">
+        <div class="bx bx-menu" (click)="toggleSidebar()"></div>
+        <span class="text">Recepcion Principal</span>
+      </div>
+      <div
+        class="arrow"
+        *ngFor="let arrow of arrows"
+        (click)="toggleMenu(arrow)"
+      ></div>
+
+      <form id="form1" runat="server">
+        <div>
+          <router-outlet></router-outlet>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

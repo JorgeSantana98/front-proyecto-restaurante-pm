@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principal</title>
+    <link rel="stylesheet" href="master-mesero.component.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+  <div class="sidebar" [ngClass]="{ close: isSidebarClosed }">
+    <div class="logo-details"> 
+        <img src="/assets/img/restau46.png" />
+     <span class="logo_name">Restaurante Gourmet</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bx bx-dish"></i>
+              <select
+                class="link_name"
+                style="background-color: #ffce00; border: none"
+              (change)="abrirNuevaVentana($event)"
+                >
+                <option selected>Orden</option>
+                <option value="enlace1">Servir</option>
+                <option value="enlace2">Llevar</option>
+              </select>
+            </a>
+          </div>
+        </li> 
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="/assets/img/mesero.png" alt="profileImg">
+      </div>
+      <div class="name-job">
+        <div class="profile_name">Conectado</div>
+        <div class="job">Mesero</div>        
+      </div>       
+       <a href="Inicio.aspx">
+      <i class='bx bx-log-out' ></i>
+           </a>
+      <span class="link_name"></span>
+    </div>
+  </li>
+</ul>
+  </div>
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' (click)="toggleSidebar()" ></i>
+      <span class="text">Recepcion Principal</span>
+      <div
+          class="arrow"
+          *ngFor="let arrow of arrows"
+          (click)="toggleMenu(arrow)"
+        ></div>
+    </div>
+    <form id="form1" runat="server">
+        <div>
+           <router-outlet > </router-outlet>
+        </div>
+    </form>
+      </section>
+</body>
+</html>

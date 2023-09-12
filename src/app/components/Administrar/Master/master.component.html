@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principal</title>
+    <link rel="stylesheet" href="master.component.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"
+    />
+  
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar" [ngClass]="{ close: isSidebarClosed }">
+      <div class="logo-details">
+        <i>
+          <img src="/assets/img/restau46.png" alt="profileImg" />
+        </i>
+        <span class="logo_name">Restaurante Gourmet</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/menu">
+            <i class="bx bxs-user-badge"></i>
+            <span class="link_name" >Menu</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li>
+              <a class="link_name" >Menu</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bx bxs-spreadsheet"></i>
+              <select
+                class="link_name"
+                style="background-color: #ffce00; border: none"
+              (change)="abrirNuevaVentana($event)"
+                >
+                <option selected>Administrar</option>
+                <option value="enlace1">Cliente</option>
+                <option value="enlace2"><a>Empleado</a></option>
+              </select>
+            </a>
+          </div>
+        </li>
+           <li>
+          <div class="iocn-link">
+            <a href="#">
+              <i class="bx bxs-spreadsheet"></i>
+              <select
+                class="link_name"
+                style="background-color: #ffce00; border: none"
+              (change)="abrirNuevaVentana($event)"
+                >
+                <option selected>Ingredientes</option>
+                <option value="enlace3">Proveedor</option>
+                <option value="enlace4">Ingredientes</option>
+              </select>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/adminidentificador">
+            <i class="bx bxs-id-card"></i>
+            <span class="link_name">Identificacion</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name">Identificacion</a></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/adminextra">
+            <i class="bx bxs-cart"></i>
+            <span class="link_name">Extras</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" >Extras</a></li>
+          </ul>          
+        </li>
+        <li>
+          <div class="profile-details">
+            <div class="profile-content">
+              <img src="\assets\img\administa.png" alt="profileImg" />
+            </div>
+            <div class="name-job">
+              <div class="profile_name">Conectado</div>
+              <div class="job">Administrador</div>
+            </div>
+            <a routerLink="/menu">
+              <i class="bx bx-log-out"></i>
+              <span class="link_name"></span>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <
+    </div>
+
+    <section class="home-section">
+      <div class="home-content">
+        <div class="bx bx-menu" (click)="toggleSidebar()"></div>
+        <span class="text">Menu Principal</span>
+       
+        <div
+          class="arrow"
+          *ngFor="let arrow of arrows"
+          (click)="toggleMenu(arrow)"
+        ></div>
+      </div>
+       <form id="form1" runat="server">
+            <div id="iformacion">
+               <router-outlet > </router-outlet>
+            </div>
+        </form>
+    </section>
+  </body>
+</html>

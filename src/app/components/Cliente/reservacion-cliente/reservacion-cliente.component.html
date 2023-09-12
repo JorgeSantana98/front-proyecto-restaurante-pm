@@ -1,0 +1,81 @@
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="../../../../assets/img/cliente/reservacion.jpg"
+                alt="..." />
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <div class="form-group">
+                    <label id="Label1">Fecha:</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" name="fecha" id="TextBox1" class="form-control" placeholder="Ingrese la fecha" />
+
+                </div>
+                <div class="form-group">
+                    <label ID="Label4">Hora:</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="hora" ID="TextBox4" class="form-control" placeholder="Hora" />
+                </div>
+               
+                <div class="form-group">
+                    <label ID="Label2">Numero de Personas</label>
+                </div>
+                <div class="form-group">
+                    <input ID="TextBox2" class="form-control" placeholder="Numero de Personas" />
+                </div>
+                <p class="mb-3"></p>
+                <div class="form-group">
+                    <button id="btnBuscarMesa" class="btn-primary" OnClick="btnBuscarMesa_Click" value="Buscar_Mesa">
+                        Buscar Mesa
+                    </button>
+                    <br />
+                    <br />
+                    <label ID="Label3" Visible="TRUE">Numero de Mesa:</label>
+                    <br />
+                    <input id="TextBox3" class="form-control" ReadOnly="False" Visible="TRUE"
+                        placeholder="Numero de Mesas" />
+                </div>
+                <p class="mb-3"></p>
+                <div class="form-group">
+                    <button id="Button1" text="Next" Visible="true" class="btn-primary" OnClick="Button1_Click"
+                        value="next">
+                        Next
+                    </button>
+                </div>
+                <p class="mb-3"></p>
+                <div class="form-group">
+                    <input type="button" id="Button2" text="Ver sus Reservaciones" routerLink="/client/ver-reservas"
+                        class="btn" value="Ver sus Reservaciones" />
+                </div>
+                <p class="mb-3"></p>
+                <div class="intro-button mx-auto">
+                    <a class="btn btn-primary btn-xl" href="#!">Gracias por preferirnos!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(function () {
+        $("#TextBox1").datepicker({
+            dateFormat: "dd/mm/yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "2022:2100",
+            minDate: new Date(),
+        });
+
+        $("#TextBox4").timepicker({
+            timeFormat: "HH:mm",
+            interval: 60,
+            minTime: "12:00",
+            maxTime: "23:00",
+            startTime: "12:00",
+            dynamic: true,
+            dropdown: true,
+            scrollbar: true,
+        });
+    });
+</script>
