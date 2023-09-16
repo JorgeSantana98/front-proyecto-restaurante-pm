@@ -37,6 +37,7 @@ import { ContactoComponent } from './components/Cliente/contacto/contacto.compon
 import { MenuLunchComponent } from './components/Cliente/menu-lunch/menu-lunch.component';
 import { MenuDinnerComponent } from './components/Cliente/menu-dinner/menu-dinner.component';
 import { HttpClientModule } from "@angular/common/http";
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { HttpClientModule } from "@angular/common/http";
     MenuClienteComponent,
     ContactoComponent,
     MenuLunchComponent,
-    MenuDinnerComponent
+    MenuDinnerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

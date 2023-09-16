@@ -21,6 +21,7 @@ import { MenuClienteComponent } from './components/Cliente/menu-cliente/menu-cli
 import { ContactoComponent } from './components/Cliente/contacto/contacto.component';
 import { MenuLunchComponent } from './components/Cliente/menu-lunch/menu-lunch.component';
 import { MenuDinnerComponent } from './components/Cliente/menu-dinner/menu-dinner.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: 'menu', component: PlatomenuComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'meseroOrdenservir', component: OrdenServirComponent },
   { path: 'recepcionistareservaciones', component: ReservacionesRecepcionistaComponent },
   { path: 'recepcionistamesas', component: MesasRecepcionistaComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'client', component: ClienteComponent, children: [
     { path: 'inicio', component: ContenidoInicioComponent },
     { path: 'about', component: AboutComponent },
